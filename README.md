@@ -33,13 +33,13 @@ Here're functions:
 <p>1. Clone the repository:</p>
 
 ```
-git clone https://github.com/yourusername/InstaShare.git
+git clone https://github.com/yourusername/Decentralised-P2P-File-Sharing.git
 ```
 
 <p>2. Navigate to the project directory:</p>
 
 ```
-cd InstaShare
+cd Decentralised-P2P-File-Sharing
 ```
 
 <p>3. Install the required dependencies:</p>
@@ -53,4 +53,5 @@ pip install -r requirements.txt
 ```
 python client/client.py
 ```
+
 
