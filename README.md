@@ -2,11 +2,6 @@
 
 <p id="description">InstaShare is a decentralized peer-to-peer (P2P) file-sharing platform inspired by the popular Local DC++ system. Designed to facilitate seamless data exchange within a local network InstaShare empowers users with a suite of robust features that streamline the process of sharing and managing files.</p>
 
-<h2>🎥 Project Demonstration</h2>
-
-[Watch the demonstration video](https://drive.google.com/file/d/1N5HwZfn9Ru3jwhEwFz2dlng5c9_5MHG2/view?usp=sharing)
-
-
   
 <h2>🧐 Features</h2>
 
@@ -58,3 +53,4 @@ pip install -r requirements.txt
 ```
 python client/client.py
 ```
+
