@@ -1,1 +1,0 @@
-STOP_THREAD = False
