@@ -6,6 +6,15 @@ linters:
     - gosec     # security smells: weak crypto, unsafe file perms, path joins
     - errorlint # wrapped-error comparisons done right (errors.Is / errors.As)
     - misspell
+  settings:
+    errcheck:
+      # These only write human-readable output to the terminal; if that fails there is
+      # nothing useful to do. Network writes never go through fmt (we write binary frames
+      # with conn.Write and always check the error).
+      exclude-functions:
+        - fmt.Fprint
+        - fmt.Fprintf
+        - fmt.Fprintln
 
 formatters:
   enable:

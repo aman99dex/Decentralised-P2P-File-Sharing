@@ -154,6 +154,15 @@ golangci-lint runs many linters in one pass.
   - **errorlint**: makes sure wrapped errors are compared with `errors.Is` and `errors.As`.
   - **misspell**.
 
+**A real failure from this phase.** The first CI run went red: errcheck flagged every
+`fmt.Fprintf(stderr, …)` in `main.go`, because Go functions return errors and ignoring one is
+usually a bug. Writing to the terminal is the exception: if that write fails, there is nothing
+useful to do. So `.golangci.yml` exempts exactly `fmt.Fprint`, `fmt.Fprintf` and
+`fmt.Fprintln`, with a comment explaining why. We **didn't** exempt everything. When we later
+write to network connections with `conn.Write`, errcheck will force us to handle every error,
+and that's what we want. The lesson: **tune a linter narrowly and write down why. Never
+silence it wholesale.**
+
 ### `.gitignore`, `.gitattributes`, `LICENSE`, `README.md`
 - **`.gitattributes`** with `eol=lf` stores every file with Unix line endings, even when you
   edit on Windows. Without it, `gofmt` in CI on Linux would complain about the CRLF line
