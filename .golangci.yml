@@ -1,0 +1,13 @@
+version: "2"
+
+linters:
+  default: standard # errcheck, govet, ineffassign, staticcheck, unused
+  enable:
+    - gosec     # security smells: weak crypto, unsafe file perms, path joins
+    - errorlint # wrapped-error comparisons done right (errors.Is / errors.As)
+    - misspell
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
